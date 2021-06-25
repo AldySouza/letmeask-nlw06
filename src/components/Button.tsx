@@ -1,17 +1,14 @@
-import { useState } from "react";
+import { ButtonHTMLAttributes } from 'react';
+import '../styles/button.scss'
 
-export function Button() { // named export
-    //let counter = 0;
-    const [counter, setCounter] = useState(0); //1° variavel é o valor deste estado, a 2° var é uma função que serve para alterarmos o valor da primeira
+type ButtonProps = ButtonHTMLAttributes<HTMLButtonElement>
 
-    function increment() {
-        setCounter(counter + 1);     
-    }
-
+export function Button(props: ButtonProps) { // named export
     return (
-        <button onClick={increment}>
-            {counter}
-        </button>
+        <button className="button" {...props} />
     )
 }
 
+
+//let counter = 0;
+//1° variavel é o valor deste estado, a 2° var é uma função que serve para alterarmos o valor da primeira
